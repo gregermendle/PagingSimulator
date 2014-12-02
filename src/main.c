@@ -290,7 +290,6 @@ void load(struct Process proc, struct Process *pages, double procPages, int numP
         
         // check if we have exceeded the number of pages
         if(i == numPages){
-            printf("Adding process to wait queue! ;)\n");
             return;
         }
         
