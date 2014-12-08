@@ -95,7 +95,7 @@ int importData(struct Process plist[], const char* file){
     char action[6];
     
     // process id
-    int pid, i;
+    int pid, i, act;
     
     // process size
     int psize;
@@ -133,6 +133,8 @@ int importData(struct Process plist[], const char* file){
             // get process size
             fscanf(fin, "%*s %d", &psize);
             
+            // change the action to load
+            act = LOAD;
         // unload process
         }else{
             
@@ -141,10 +143,10 @@ int importData(struct Process plist[], const char* file){
             
             // set size to 0 since its unload
             psize = 0;
+            
+            // change the action to unload
+            act = UNLOAD;
         }
-        
-        // allocate our action string
-        plist[i].action = (char *)malloc(strlen(action)*sizeof(char));
         
         /*
          
@@ -152,7 +154,7 @@ int importData(struct Process plist[], const char* file){
          
          */
         
-        strcpy(plist[i].action, action);
+        plist[i].action = act;
         plist[i].pid = pid;
         plist[i].psize = psize;
         
@@ -189,7 +191,7 @@ double simulate(struct Process plist[], int pageSize, int numPages){
          
          */
         
-        if(!strcmp(plist[i].action, "Load")){
+        if(plist[i].action == LOAD){
             // find the number of pages needed for the current process
             procPages = ceil((double)plist[i].psize/(double)pageSize);
             
@@ -202,7 +204,7 @@ double simulate(struct Process plist[], int pageSize, int numPages){
          Unload action
          
          */
-        if(!strcmp(plist[i].action, "Unload")){
+        if(plist[i].action == UNLOAD){
             
             // unload the process
             unload(plist[i].pid, pages, numPages);
