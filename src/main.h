@@ -25,6 +25,8 @@ typedef struct Process{
 #define MAX_PROC 10000
 #define ADDR_SIZE 16.0
 #define FRAG_THRESH 0.5
+#define LOAD 1
+#define UNLOAD 0
 
 double simulate(struct Process[], int, int);
 int importData(struct Process[], const char*);
