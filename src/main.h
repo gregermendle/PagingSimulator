@@ -16,7 +16,7 @@
  */
 
 typedef struct Process{
-    char *action;
+    int action; // load unload
     int pid; // process id
     int psize; // process size
 };
