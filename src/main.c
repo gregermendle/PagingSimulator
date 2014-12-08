@@ -84,7 +84,7 @@ void initProcessArray(struct Process p[], int num){
     for (i = 0; i<num; i++) {
         p[i].psize = -1;
         p[i].pid = -1;
-        p[i].action = NULL;
+        p[i].action = -1;
     }
     
 }
@@ -245,7 +245,7 @@ void unload(int pid, struct Process *pages, int numPages){
         if(pages[i].pid == pid){
             pages[i].pid = -1;
             pages[i].psize = -1;
-            pages[i].action = NULL;
+            pages[i].action = -1;
         }
     }
     
