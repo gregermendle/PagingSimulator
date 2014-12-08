@@ -1,9 +1,10 @@
 //
-//  main.c
-//  CIS370Homework3
+// main.c
+// Paging Simulator
 //
-//  Created by Greg on 11/24/14.
-//  Copyright (c) 2014 Gregory Jordan. All rights reserved.
+// Created by Greg on 11/24/14.
+// Last Modified 12/8/14
+// Copyright (c) 2014 Gregory Jordan. All rights reserved.
 //
 
 #include <stdio.h>
