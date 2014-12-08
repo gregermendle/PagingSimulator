@@ -6,16 +6,13 @@
 //  Copyright (c) 2014 Gregory Jordan. All rights reserved.
 //
 
-#ifndef CIS370Homework3_main_h
-#define CIS370Homework3_main_h
-
 /* 
  
  Structure to hold our process
  
  */
 
-typedef struct Process{
+struct Process{
     int action; // load unload
     int pid; // process id
     int psize; // process size
@@ -34,5 +31,3 @@ void initProcessArray(struct Process[], int);
 void load(struct Process, struct Process*, double, int, int);
 void unload(int, struct Process*, int);
 double fragmentation(struct Process*, int, int);
-
-#endif
