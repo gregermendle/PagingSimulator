@@ -9,7 +9,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include "main.h"
+#include "pagingSimulator.h"
 #include <math.h>
 #include <string.h>
 
